@@ -24,3 +24,14 @@ function Email(address,type){
 // created using new Person. The addEmail function should take an email address and type as arguments, 
 // call the Email constructor to create a new email object, then push that email object to the emails 
 // of the person.Finally test your code by creating a person and giving them a home and work email.
+Person.prototype.addEmail = function(emailAddress, type){
+    var emailObj = new Email(emailAddress,type)
+    this.emails.push(emailObj);
+}
+
+var beyonce = new Person("Beyonce","Knowles");
+beyonce.addEmail("beyonce@devjams.com","work");
+beyonce.addEmail("beyonce@jayz.com","home");
+
+//console.log(JSON.stringify(beyonce, null, 4));
+console.log(beyonce);
